@@ -9,4 +9,11 @@ app.use (express.static('public'));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+app.get('/', function(request, response){
+    var contexto = {
+        titulo = 'Principal page'
+    }
+    response.render('home', contexto);
+});
+
 app.listen(3000);
